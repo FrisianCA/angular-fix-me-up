@@ -14,7 +14,7 @@ import { Observable, of } from 'rxjs';
 })
 export class AccountSummaryComponent implements OnInit {
   accounts$: Observable<Account[]> = of([]);
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService) { }
   accounts: Account[] = [];
   accountsFilter = '';
 
