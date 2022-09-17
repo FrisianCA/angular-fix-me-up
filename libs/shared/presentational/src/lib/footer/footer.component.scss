@@ -1,11 +1,15 @@
 @use "theme";
+@import "theme";
 
 section {
   height: 40px;
+
   background: theme.$brand-bg-alt;
   color: white;
+
   padding-right: theme.$brand-padding;
   padding-left: theme.$brand-padding;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +20,13 @@ section {
 .nav-offsite {
   a {
     // TODO: 12. something's off with this include
-    // @include link();
+    @include link();
     color: white;
+  }
+}
+
+@media all and (max-width: 60em) {
+  section {
+    flex-direction: column;
   }
 }

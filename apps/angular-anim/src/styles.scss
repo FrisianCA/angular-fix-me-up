@@ -2,3 +2,11 @@
 @use 'styles-font';
 
 // TODO: 1. the header (footer) needs to run flush to the top (bottom) and sides
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
