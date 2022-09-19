@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'styles-font';
+@use "theme";
 
 // TODO: 1. the header (footer) needs to run flush to the top (bottom) and sides
 body {
@@ -9,4 +10,31 @@ body {
 
 *, ::before, ::after {
     box-sizing: border-box;
+}
+
+table {
+    width: 60%;
+}
+
+thead {
+    background-color: theme.$brand-bg;
+    color: white;
+}
+
+th[scope='col'] {
+    border-bottom: 1px solid #333;
+  }
+  
+  tr:nth-child(2n) {
+    background-color: #DEDEDE;
+  }
+
+td {
+    text-align: center;
+}
+
+@media all and (max-width: 60em) {
+    table {
+        width: 100%;
+    }
 }

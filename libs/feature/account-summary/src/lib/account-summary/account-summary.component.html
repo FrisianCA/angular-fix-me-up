@@ -4,18 +4,24 @@
 <div class="account-summary">
   <section>
     <table>
-      <tr>
-        <th scope="col">Account Name</th>
-        <th scope="col">Balance</th>
-        <th scope="col">
-          <label>Account Type</label>
-          <select [(ngModel)]="accountsFilter">
-            <option value="">None</option>
-            <option value="cad">CAD</option>
-            <option value="usd">USD</option>
-          </select>
-        </th>
-      </tr>
+      <thead>
+        <tr>
+          <th scope="col">Account Name</th>
+          <th scope="col">Balance</th>
+          <th scope="col">
+            <label for="type-select">Account Type</label>
+            <select
+              [(ngModel)]="accountsFilter"
+              id="type-select"
+              class="type-select"
+            >
+              <option value="">None</option>
+              <option value="cad">CAD</option>
+              <option value="usd">USD</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
       <tr *ngFor="let account of filterAccounts(accounts)">
         <!-- TODO: 8. route to detail view -->
         <th>
