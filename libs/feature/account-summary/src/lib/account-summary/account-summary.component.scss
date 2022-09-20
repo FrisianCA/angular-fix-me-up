@@ -1,4 +1,13 @@
-.type-select {
-  margin-left: 1em;
+.select-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#type-select {
+  background: #fff;
+  border: none;
 }
 

@@ -8,25 +8,28 @@
         <tr>
           <th scope="col">Account Name</th>
           <th scope="col">Balance</th>
-          <th scope="col">
+          <th scope="col" class="select-header">
             <label for="type-select">Account Type</label>
-            <select
-              [(ngModel)]="accountsFilter"
-              id="type-select"
-              class="type-select"
-            >
-              <option value="">None</option>
-              <option value="cad">CAD</option>
-              <option value="usd">USD</option>
-            </select>
+            <form [formGroup]="accountFilterForm">
+              <select
+                name="AccountTypeSelect"
+                id="type-select"
+                (change)="filterType()"
+                formControlName="accountType"
+              >
+                <option *ngFor="let filter of filters" [ngValue]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+            </form>
           </th>
         </tr>
       </thead>
       <tr *ngFor="let account of filterAccounts(accounts)">
         <!-- TODO: 8. route to detail view -->
-        <th>
+        <td>
           <a [routerLink]="['/account', account.id]">{{ account.id }}</a>
-        </th>
+        </td>
         <td>{{ account.balance }}</td>
         <td>{{ account.currency }}</td>
       </tr>
