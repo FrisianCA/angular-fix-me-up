@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Account } from 'libs/shared/services/src/lib/account';
 import { AccountService } from 'libs/shared/services/src/lib/account.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'sum-account-summary',
@@ -14,6 +15,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AccountSummaryComponent implements OnInit {
 
+  accounts$: Observable<Account[]> = of([]);
   accounts: Account[] = [];
   accountsFilter = '';
   filters: string[] = ["None", "USD", "CAD"];
